@@ -60,33 +60,40 @@ Input
 ## Demo
 
 ### Scenario
+Should I switch to a new job this year?
 → Stay in current job
 
 - Single-path result  
 - All alternatives discarded  
 
 ---
+### Traditional Output
+
+→ Stay in current job
+
+- Single-path result  
+- All alternatives discarded
 
 ### STME Output
 Candidate States:
 
 [State A] Switch job immediately
 
-Score: 15.2
-Risk: High
-Status: Active
+- Score: 15.2
+- Risk: High
+- Status: Active
 
 [State B] Wait and observe
 
-Score: 17.5
-Risk: Medium
-Status: Active
+- Score: 17.5
+- Risk: Medium
+- Status: Active
 
 [State C] Stay in current job
 
-Score: 18.0
-Risk: Low
-Status: Active
+- Score: 18.0
+- Risk: Low
+- Status: Active
 
 Result:
 
@@ -161,3 +168,4 @@ It is a **decision space engine**.
 
 STME does not choose for you.  
 It keeps your choices alive.
+STME maintains a decision space instead of collapsing it into a single output.
