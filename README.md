@@ -61,6 +61,7 @@ Input
 
 ### Scenario
 Should I switch to a new job this year?
+
 → Stay in current job
 
 - Single-path result  
