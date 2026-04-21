@@ -163,6 +163,11 @@ STME is not a decision-making system.
 
 It is a **decision space engine**.
 
+This repository demonstrates selected concepts related to structured multi-state reasoning.
+
+Certain mechanisms and system-level structures are intentionally abstracted or omitted.
+
+This is not a full implementation.
 ---
 
 ## Closing
