@@ -1,4 +1,4 @@
-### STME Demonstration (Simplified)
+## STME Demonstration (Simplified)
 
 A system that evaluates without collapsing decision space.
 
