@@ -1,4 +1,4 @@
-# STME — State-Based Decision Space Engine
+### STME Demonstration (Simplified)
 
 A system that evaluates without collapsing decision space.
 
