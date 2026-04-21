@@ -1,0 +1,4 @@
+# No external dependencies required for Demo v1
+# Python 3.10+ recommended
+# STME Demo v1
+# Tested with Python 3.10+
