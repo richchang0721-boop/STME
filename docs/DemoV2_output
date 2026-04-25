@@ -1,0 +1,143 @@
+E:\CHATGPT\PIDA\STME_DEMO>python stme_demov2.py
+
+========================================================================
+STME DEMO v2 — WITH ABSTRACT CONSTRAINT LAYER
+========================================================================
+A system that evaluates without collapsing decision space.
+This demo compares a traditional single-answer flow with STME.
+
+
+========================================================================
+TRADITIONAL SYSTEM
+========================================================================
+Scenario:
+Should I switch to a new job this year?
+
+Traditional Output:
+→ Stay in current job
+
+Characteristics:
+- Single-path result
+- All alternatives discarded
+- Future changes require full recomputation
+
+========================================================================
+STME OUTPUT
+========================================================================
+Scenario:
+Should I switch to a new job this year?
+
+Candidate States:
+
+[State A] Switch job immediately
+- Score: 15.2
+- Risk: High
+- Status: Active
+- Notes: High upside but lower controllability
+
+[State B] Wait and observe
+- Score: 17.5
+- Risk: Medium
+- Status: Active
+- Notes: Balanced path under uncertainty
+
+[State C] Stay in current job
+- Score: 18.0
+- Risk: Low
+- Status: Active
+- Notes: Highest short-term controllability
+
+Result:
+- Multiple states preserved
+- No decision collapse performed at STME layer
+- All viable paths remain available for future transition
+
+========================================================================
+STATE PERSISTENCE
+========================================================================
+Cycle 1:
+A / B / C
+
+Cycle 2:
+B ↑
+C ↓
+A (still available)
+
+Cycle 3:
+A becomes dominant
+
+Meaning:
+- Existing states are reused across evaluation cycles
+- The system does not need to regenerate the entire decision space
+- State transitions remain adaptive over time
+
+========================================================================
+NEXT CYCLE — WITHOUT CONSTRAINT (BASELINE)
+========================================================================
+
+========================================================================
+NEXT EVALUATION CYCLE
+========================================================================
+Updated Candidate States:
+
+[State A] Switch job immediately
+- Score: 18.6
+- Risk: High
+- Status: Promoted
+- Notes: Reactivated under improved external conditions | High upside but lower controllability
+
+[State B] Wait and observe
+- Score: 16.9
+- Risk: Medium
+- Status: Active
+- Notes: Still viable under medium uncertainty | Balanced path under uncertainty
+
+[State C] Stay in current job
+- Score: 15.4
+- Risk: Low
+- Status: Deferred
+- Notes: Lower relative value after condition change | Highest short-term controllability
+
+Observation:
+- A previously non-primary state can become dominant
+- STME preserves decision space instead of destroying it
+- Final selection, if any, belongs to an external decision layer
+
+========================================================================
+NEXT CYCLE — WITH NDF CONSTRAINT (ABSTRACT)
+========================================================================
+
+========================================================================
+NEXT EVALUATION CYCLE
+========================================================================
+Updated Candidate States:
+
+[State A] Switch job immediately
+- Score: 18.6
+- Risk: High
+- Status: Promoted
+- Notes: Reactivated under improved external conditions | High upside but lower controllability | NDF flag: high-risk requires constraint review
+
+[State B] Wait and observe
+- Score: 16.9
+- Risk: Medium
+- Status: Active
+- Notes: Still viable under medium uncertainty | Balanced path under uncertainty
+
+[State C] Stay in current job
+- Score: 15.4
+- Risk: Low
+- Status: Deferred
+- Notes: Lower relative value after condition change | Highest short-term controllability
+
+Observation:
+- A previously non-primary state can become dominant
+- STME preserves decision space instead of destroying it
+- Final selection, if any, belongs to an external decision layer
+Note: Output is subject to external constraint layers (e.g., NDF).
+
+========================================================================
+FINAL NOTE
+========================================================================
+STME does not choose for you.
+It keeps your choices alive.
